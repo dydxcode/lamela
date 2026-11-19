@@ -11,9 +11,9 @@ export function VideoPlayer({ src }: VideoPlayerProps) {
 
   if (kind === "file") {
     return (
-      <div className="w-full">
+      <div className="player-fullscreen flex items-center justify-center">
         <video
-          className="w-full max-h-[80vh] bg-black rounded-lg"
+          className="w-full h-full object-contain bg-black"
           controls
           playsInline
           preload="metadata"
@@ -26,10 +26,10 @@ export function VideoPlayer({ src }: VideoPlayerProps) {
   }
 
   return (
-    <div className="w-full aspect-video">
+    <div className="player-fullscreen">
       <iframe
         src={src}
-        className="w-full h-full rounded-lg border-0"
+        className="w-full h-full border-0"
         scrolling="no"
         frameBorder={0}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"

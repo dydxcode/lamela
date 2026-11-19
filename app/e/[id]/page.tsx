@@ -22,8 +22,8 @@ export default async function VideoPage({ params }: PageProps) {
   if (!video) notFound();
 
   return (
-    <main className="min-h-screen p-4 md:p-8">
-      <div className="mx-auto w-full max-w-4xl">
+    <main className="min-h-[100dvh] bg-black flex items-center justify-center">
+      <div className="w-full md:max-w-5xl">
         <VideoPlayer src={video.url} />
       </div>
     </main>
