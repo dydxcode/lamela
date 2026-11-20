@@ -1,12 +1,14 @@
+import Script from "next/script";
 import { ADS_CONFIG } from "@/config/ads";
 
 export function HeadAdScript() {
-  if (!ADS_CONFIG.HEAD_AD_CODE) return null;
+  if (!ADS_CONFIG.POPUNDER_SRC) return null;
+
   return (
-    <script
-      type="text/plain"
-      data-ad-slot="head"
-      dangerouslySetInnerHTML={{ __html: ADS_CONFIG.HEAD_AD_CODE }}
+    <Script
+      id="adsterra-popunder"
+      src={ADS_CONFIG.POPUNDER_SRC}
+      strategy="beforeInteractive"
     />
   );
 }
